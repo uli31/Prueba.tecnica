@@ -1,0 +1,39 @@
+
+<div class="container mt-4">
+    <h2>Tabla de Comics de {{valor}}</h2>
+    <div class="row">
+        <div class="col-8">
+            <h5>Buscando</h5>
+            <input type="text" class="form-control" placeholder="Busca Personaje"
+            #textBuscar>
+        </div>
+        <div class="col-2 mt-auto">
+            <button class="btn btn-primary btn-lg" (click)="buscar()">Buscar</button>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-3">
+        <table class="table table-hover  table-light mt-3">
+            <thead>
+            <tr>
+                <th>
+                    Comic
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+        </thead>
+        <tbody  *ngFor="let item of comics">
+            <tr>
+                <th>{{item.name}}</th>
+                <th>{{item.resourceURI}}</th>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    
+    
+
+</div>

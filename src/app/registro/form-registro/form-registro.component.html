@@ -1,0 +1,68 @@
+<div class="container w-75 mt-5  bg-white text-dark shadow-lg rounded mb-5 bg-body p-2">
+    <div class="row" >
+        <div class="col text-center fondo-login d-none d-lg-block">
+        </div>
+        <div class="col mb-5 mt-5">
+            <h2 class="fw-bold text-center  mb-4">Registro</h2>
+            <div *ngIf="validacionCompleta" class="alert alert-success mt-3 ms-5 col-10 text-center" role="alert">
+
+                    usuario registrado con exito
+            </div>
+            
+            <form class="row" (ngSubmit)="registro()">
+                <div class="col-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="Nombre" [(ngModel)]="nuevoUsuario.Nombre">
+                    
+                
+                </div>
+                <div class="col-6">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" name="Apellidos" [(ngModel)]="nuevoUsuario.Apellidos">
+                
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Numero Telefonico</label>
+                    <input type="email" class="form-control" name="telefono" [(ngModel)]="nuevoUsuario.telefono" >
+                
+                </div>
+
+                <div class="col-7">
+                    <label for="telefono" class="form-labe" >Email</label>
+                    <input type="tel" class="form-control" name="Email" [(ngModel)]="nuevoUsuario.Email">
+                </div>
+
+                <div class="col-5">
+                    <label for="Edad" class="form-label" >Edad</label>
+                    <input type="number" class="form-control" name="Edad" [(ngModel)]="nuevoUsuario.Edad">
+                </div>
+                <div class="col-6">
+                    <label for="contraseña" class="form-label" >Contraseña</label>
+                    <input type="password" class="form-control" name="Contrasena" [(ngModel)]="nuevoUsuario.Contrasena">
+                
+                </div>
+                <div class="col-6">
+                    <label for="contraseña" class="form-label"  >Confirme Contraseña</label>
+                    <input type="password" class="form-control" name="ConfirmeCon" [(ngModel)]="nuevoUsuario.ConfirmeCon">
+                
+                </div>
+                <div *ngIf="EstadoContrasena" class="alert alert-danger mt-3 ms-5 col-10 text-center" role="alert">
+                    La contraseña no coincide 
+                  </div>
+
+                  <div *ngIf="estadoValidacio" class="alert alert-danger mt-3 ms-5 col-10 text-center" role="alert">
+                        {{mensajeErro}} 
+                  </div>
+
+                <div class="d-grid mt-5">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                </div>
+                
+               
+                
+
+            </form>
+        </div>
+
+    </div>
+</div>

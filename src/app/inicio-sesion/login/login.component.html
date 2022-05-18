@@ -1,0 +1,38 @@
+<div class="container w-75 mt-5  bg-white text-dark shadow-lg rounded mb-5 bg-body p-2">
+    <div class="row" >
+        <div class="col text-center fondo-login d-none d-lg-block">
+        </div>
+        <div class="col mb-5 mt-5">
+            <h2 class="fw-bold text-center  mb-4">Bienvenido</h2>
+            <div class="text-center"><img src="./assets/usuario.png" class="text-center" height="80px"  alt=""></div>
+            
+            <form (ngSubmit)="login()">
+                <div class="mb-4">
+                    <label for="email" class="form-label"> Correo Elctronico</label>
+                    <input type="email" name="email" class="form-control"  [(ngModel)]="usuario.correo">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label"> Contraseña</label>
+                    <input type="password" name="password" class="form-control"  [(ngModel)]="usuario.contrasena">
+                </div>
+                <div *ngIf="captchatEstado" class="alert alert-danger text-center" role="alert">
+                    No has confirmado si eres una personas
+                  </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                </div>
+                <div class="mt-3 position-relative ">
+                    <re-captcha class="position-absolute top-100 start-50 translate-middle-x" (resolved)="revisarCapptchat($event)" siteKey="6LfeTPofAAAAAJDbNwsairCVnv_7e8qb4NMz7gEi"></re-captcha>
+
+                </div>
+               
+                <div class="my-3 text-center">
+                    <span>No tienes Cuenta?</span> <a href="">Registrate</a>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
